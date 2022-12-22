@@ -9,7 +9,7 @@
   }
 
 main{
-    background: linear-gradient(0deg, #dbdbd2 85%, #009688 60%);
+    background-color:  rgb(160, 253, 253);
     height: 100vh;
     display: flex;
     align-content: center;
@@ -49,7 +49,6 @@ main{
 }
 
 #windowChat{
-    height: 90vh;
     min-width: 900px;
 }
 
@@ -74,7 +73,7 @@ main{
 
 #activeChat{
   background-color: white ;
-    height: calc(80% - 70px);
+     height: 500px;
     overflow: scroll;
     
 }

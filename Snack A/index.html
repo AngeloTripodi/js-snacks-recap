@@ -13,8 +13,12 @@
 
         <main>
             <div class="container-fluid">
-                <div id="windowChat" class="row justify-content-center ">
+                <div id="windowChat" class="row justify-content-center d-flex align-items-center">
                     <div id="chatSection" class="col-6 noPadding">
+
+                        <div id="messageBar" class="px-3 d-flex justify-content-center align-items-center">
+                        <h3>RANDOM CHAT</h3>
+                        </div>
                  
                         <div id="activeChat" class="px-3 d-flex w-100 flex-column">
                             <div :class="textMessage.status === 'sent' ? 'senderContainer' : 'receiverContainer' "
@@ -24,10 +28,6 @@
                                 </div>
 
                             </div>
-
-
-
-
 
                         </div>
 

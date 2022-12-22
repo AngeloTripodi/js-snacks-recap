@@ -23,7 +23,12 @@ createApp({
         },
 
         reply: function () {
-            this.messages.push({ message: 'Ok!', status: 'received' })
+            axios.get('https://flynn.boolean.careers/exercises/api/random/sentence')
+            .then((response) =>{
+                console.log(response.data.response)
+                const result = response.data.response;
+                this.messages.push({ message: result, status: 'received' })
+        });
         },
 
         clearInput: function () {
@@ -32,6 +37,9 @@ createApp({
 
 
         },
+        mounted(){
+
+        }
 
 
 
