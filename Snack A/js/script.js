@@ -1,36 +1,39 @@
-const {createApp} = Vue
+const { createApp } = Vue
 
 createApp({
-    data(){
-        return{
-            evenNumbers : [],
-            oddsNumbers : [],
-    }
-},
-    methods :{
+    data() {
+        return {
+            newMessage: "",
+            messages: []
 
-        getNewNumber(){
-            axios.get('https://flynn.boolean.careers/exercises/api/array/integers?min=1&max=100&items=1')
-        .then((response) =>{
-           
-            const result = response.data.response;
-            console.log(result[0])
-            
-                if (result %2 == 0){
-                    this.evenNumbers.push(result[0])
-                } else {
-                        this.oddsNumbers.push(result[0])
-                    }
-           
-        })
+
+        }
+    },
+    methods: {
+
+        addMessageOnChat: function (element) {
+            if (element != "") {
+                this.messages.push({ message: element, status: 'sent' }),
+
+                    setTimeout(this.reply, 1000);
+
+                this.clearInput();
+            }
+
         },
 
-    },
+        reply: function () {
+            this.messages.push({ message: 'Ok!', status: 'received' })
+        },
 
-    created(){
-        
-    }
+        clearInput: function () {
+            this.newMessage = "";
+        },
 
-   
-              
+
+        },
+
+
+
+
 }).mount('#app')
